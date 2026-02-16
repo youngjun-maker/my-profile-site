@@ -1,0 +1,259 @@
+
+# Claude Rules for my-profile-site
+
+## 버튼 디자인 가이드라인 (Material Design 3 기반)
+
+### 개요
+Material Design 3의 최신 버튼 표준을 따릅니다.
+모든 버튼 구현 시 다음 원칙을 적용하세요.
+
+**핵심 원칙**
+- 명확하고 간결한 라벨 사용 (sentence case)
+- 모든 상호작용 요소는 접근성 준수 필수
+- 다크모드 및 동적 색상 지원
+
+---
+
+### 1. 버튼 종류 (5가지 색상 변형)
+
+#### Elevated Button (기본값)
+- **용도**: 표준 액션, 중간 강조
+- **스타일**: 그림자가 있는 버튼, 엘리베이션 효과
+- **색상**: 배경색은 현재 테마의 surface color, 텍스트는 primary color
+- **사용 케이스**: 일반적인 주요 액션 (이전 "Raised Button"과 유사)
+
+#### Filled Button (고강조)
+- **용도**: 주요 액션, 최고 강조
+- **스타일**: 실제 배경색으로 채워짐, 그림자 없음
+- **색상**: 배경은 primary color, 텍스트는 on-primary color
+- **사용 케이스**: 폼 제출, 확정, 저장 등 가장 중요한 액션
+
+#### Filled Tonal Button (중강조)
+- **용도**: 보조 액션, 중간~낮은 강조
+- **스타일**: 밝은 배경색으로 채워짐
+- **색상**: 배경은 secondary color (연한), 텍스트는 secondary color (진함)
+- **사용 케이스**: 대체 액션, 추가 옵션
+
+#### Outlined Button (약강조)
+- **용도**: 취소, 보조 액션, 낮은 강조
+- **스타일**: 테두리만 있음, 배경 투명
+- **색상**: 테두리는 outline color, 텍스트는 primary color
+- **사용 케이스**: 취소, 뒤로가기, 부차 액션
+
+#### Text Button (최저강조)
+- **용도**: 인라인 액션, 추가 옵션, 최저 강조
+- **스타일**: 배경 없음, 텍스트만 표시
+- **색상**: 텍스트는 primary color
+- **사용 케이스**: "더보기", "추가 옵션", 링크 같은 액션
+
+---
+
+### 2. 크기 옵션 (5가지)
+
+| 크기 | 높이 | 사용 케이스|
+|------|------|-----------|
+| **Extra Small** | 24dp | 콤팩트 UI, 밀집된 공간 |
+| **Small** (기본값) | 32dp | 표준 크기, 권장 |
+| **Medium** | 40dp | 일반적인 버튼 |
+| **Large** | 48dp | 강조된 액션 |
+| **Extra Large** | 56dp | 모바일 터치 타겟, 접근성 |
+
+**권장사항**
+- 모바일에서는 Extra Large (56dp) 권장
+- 데스크톱에서는 Medium/Large (40-48dp) 권장
+- 터치 타겟 최소 44x44px 보장
+
+---
+
+### 3. 모양 옵션 (2가지)
+
+#### Round (기본값)
+- **코너 반경**: 완전히 동그랗게 (fully rounded)
+- **모양 변화**: 선택/눌림 시 모양 변경 가능
+- **사용**: 대부분의 경우 권장
+
+#### Square
+- **코너 반경**: 직각 또는 약간 둥근 모서리
+- **모양 변화**: 선택/눌림 시 모양 변경 가능
+- **사용**: 특정 디자인 시스템에 맞출 필요
+
+---
+
+### 4. 기타 기능
+
+#### Leading Icon (선택사항)
+- **크기**: 20dp (M3 표준, M2의 18dp에서 변경)
+- **배치**: 텍스트 왼쪽에 8dp 간격
+- **용도**: 액션을 시각적으로 명확히 함
+
+#### Toggle Button (선택사항)
+- **기능**: 선택/미선택 상태 토글
+- **상태 표시**: 색상 변화 또는 배경 채우기
+- **사용 케이스**: 필터, 설정 선택, 그룹 선택
+
+#### Dynamic Color Support
+- **동적 색상**: 테마 색상에 따라 자동으로 적응
+- **다크모드**: 어두운 배경에서 색상 자동 조정
+- **호환성**: Material You/Material Design 3 시스템과 호환
+
+---
+
+### 5. 라벨 및 타이포그래피
+
+**라벨 작성 가이드**
+- ✅ 간결하고 명확한 텍스트 사용
+- ✅ Sentence case 사용 ("Submit form"이 아닌 "Submit Form")
+- ✅ 동작 기반 라벨 ("Save", "Delete", "Close")
+- ❌ 모두 대문자 사용 금지
+- ❌ 너무 긴 라벨 (가능하면 1-3 단어)
+
+**폰트**
+- 기본 폰트: system font stack
+- Material Design 3 권장: Google Sans 또는 유사 sans-serif
+- 텍스트 크기: 변형/크기에 따라 12px-16px
+
+---
+
+### 6. 상태 관리
+
+| 상태 | 설명 | 시각적 표현 |
+|------|------|----------|
+| **Default** | 정상 상태 | 표준 색상, 투명도 100% |
+| **Hover** | 마우스 오버 | 배경 밝기 ±5%, 약간의 그림자 |
+| **Pressed** | 클릭/누른 상태 | 배경 밝기 변화, 스케일 98-99% |
+| **Focused** | 포커스 (키보드) | 2px 외부 테두리, 포커스 인디케이터 |
+| **Disabled** | 비활성화 | 투명도 38%, 커서 not-allowed, 상호작용 불가 |
+| **Loading** | 비동기 작업 중 | 로딩 스피너 표시, disabled 상태로 변경 |
+
+**Transition 시간**
+- 색상: 200ms
+- 투명도: 150ms
+- 스케일: 150ms
+- Easing: cubic-bezier(0.4, 0, 0.2, 1)
+
+---
+
+### 7. 높이 변경점 (M2 → M3)
+
+| 속성 | Material 2 | Material 3 |
+|------|-----------|-----------|
+| **기본 높이** | 36dp | 40dp |
+| **코너 반경** | 약간 둥금 | 완전히 동그래움 (fully rounded) |
+| **아이콘 크기** | 18dp | 20dp |
+| **색상 시스템** | 기존 색상 | Dynamic color 지원 |
+
+---
+
+### 8. 접근성 (Accessibility)
+
+**필수 사항**
+- ✅ 명확한 라벨 텍스트 제공
+- ✅ `aria-label` 또는 텍스트로 버튼 목적 설명
+- ✅ 포커스 인디케이터 항상 보이기
+- ✅ 키보드 네비게이션 완전 지원 (Tab, Enter, Space)
+
+**색상 대비 (WCAG 2.1)**
+- 텍스트 대비: 4.5:1 이상 (AA)
+- 그래픽 대비: 3:1 이상
+
+**상태 전달**
+- `aria-disabled="true"` for 비활성화
+- `aria-pressed="true"` for toggle 선택 상태
+- `aria-busy="true"` for 로딩 상태
+
+---
+
+### 9. 반응형 디자인
+
+#### 모바일 (< 600px)
+- 크기: Extra Large (56dp) 권장
+- 폭: 전체 너비 또는 최소 100px
+- 간격: 16px
+- 터치 타겟: 44x44px 최소
+
+#### 태블릿 (600px - 1200px)
+- 크기: Large (48dp)
+- 폭: 자동 또는 120px 최소
+- 간격: 12px
+
+#### 데스크톱 (> 1200px)
+- 크기: Medium (40dp)
+- 폭: content에 맞춤
+- 간격: 8px
+
+---
+
+### 10. 다크모드 대응
+
+**색상 조정 (다크모드)**
+- Filled: 밝은 primary color 사용 (배경: #121212)
+- Filled Tonal: 더 밝은 secondary color
+- Outlined: 밝은 outline color + 밝은 텍스트
+- Text: 밝은 primary color 텍스트
+- 투명도: 필요시 38% → 50% 상향
+
+**동적 색상**
+- 시스템 테마 색상 자동 감지
+- Material You 호환성 확보
+
+---
+
+### 11. 구현 체크리스트
+
+버튼을 작성할 때마다 다음을 확인하세요:
+
+```
+[ ] 버튼 종류 선택 (Elevated/Filled/Tonal/Outlined/Text)
+[ ] 크기 선택 (XS/S/M/L/XL) - 모바일 고려
+[ ] 모양 선택 (Round/Square)
+[ ] 라벨 작성 (간결, sentence case)
+[ ] 모든 상태 구현 (Default/Hover/Pressed/Focused/Disabled)
+[ ] Leading icon 필요 여부 확인
+[ ] Toggle 기능 필요 여부 확인
+[ ] aria-label 또는 텍스트 명시
+[ ] 포커스 인디케이터 보이기
+[ ] 색상 대비 확인 (WCAG AA 4.5:1)
+[ ] 터치 타겟 크기 검증 (최소 44x44px)
+[ ] 다크모드 색상 조정
+[ ] 반응형 크기 조정
+[ ] 애니메이션 트랜지션 추가 (200-150ms)
+[ ] 모바일/태블릿/데스크톱 테스트
+```
+
+---
+
+### 12. 실제 사용 예시
+
+**주요 액션 (폼 제출)**
+- 종류: Filled Button
+- 크기: Large (데스크톱), Extra Large (모바일)
+- 모양: Round
+- 라벨: "Submit" 또는 "Save Changes"
+
+**취소 버튼**
+- 종류: Outlined Button
+- 크기: Large (데스크톱), Extra Large (모바일)
+- 모양: Round
+- 라벨: "Cancel" 또는 "Close"
+
+**추가 옵션**
+- 종류: Text Button 또는 Tonal Button
+- 크기: Small ~ Medium
+- 모양: Round
+- 라벨: "More Options" 또는 "Advanced Settings"
+
+**필터 버튼 (토글)**
+- 종류: Outlined 또는 Filled Tonal
+- 크기: Small ~ Medium
+- 토글: 활성화
+- 라벨: "Active", "Inactive" 표시
+
+---
+
+### 참고 자료
+
+- **Material Design 3 Buttons**: https://m3.material.io/components/buttons
+- **WCAG 2.1**: https://www.w3.org/WAI/WCAG21/quickref/
+- **Accessibility Guidelines**: https://www.w3.org/WAI/tutorials/buttons/
+
+**마지막 업데이트**: 2026-02-16 (puppeteer를 통한 실제 페이지 콘텐츠 기반)

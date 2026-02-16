@@ -211,6 +211,227 @@ nav a.active {
     }
 }
 
+/* ===== Material Design 3 Button Styles ===== */
+
+/* Base Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: 9999px; /* Fully rounded (Round) */
+    text-decoration: none;
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    user-select: none;
+    position: relative;
+}
+
+/* Button Sizes */
+.btn-xs {
+    height: 24px;
+    padding: 0 12px;
+    font-size: 12px;
+}
+
+.btn-sm {
+    height: 32px;
+    padding: 0 16px;
+    font-size: 12px;
+}
+
+.btn-md {
+    height: 40px;
+    padding: 0 24px;
+    font-size: 14px;
+}
+
+.btn-lg {
+    height: 48px;
+    padding: 0 32px;
+    font-size: 16px;
+}
+
+.btn-xl {
+    height: 56px;
+    padding: 0 40px;
+    font-size: 16px;
+}
+
+/* Responsive sizing for mobile */
+@media (max-width: 600px) {
+    .btn-lg,
+    .btn-xl {
+        height: 56px;
+        padding: 0 40px;
+    }
+}
+
+/* Filled Button (고강조 - 주요 액션) */
+.btn-filled {
+    background-color: #22c55e; /* Green-500 (Primary color) */
+    color: #000000; /* On-primary (Black text) */
+    box-shadow: 0 2px 4px rgba(34, 197, 94, 0.3);
+}
+
+.btn-filled:hover {
+    background-color: #16a34a; /* Slightly darker green */
+    box-shadow: 0 4px 8px rgba(34, 197, 94, 0.4);
+}
+
+.btn-filled:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(34, 197, 94, 0.3);
+}
+
+.btn-filled:focus {
+    outline: 2px solid rgba(34, 197, 94, 0.5);
+    outline-offset: 2px;
+}
+
+.btn-filled:disabled {
+    background-color: rgba(34, 197, 94, 0.38);
+    color: rgba(0, 0, 0, 0.38);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Outlined Button (약강조 - 보조 액션) */
+.btn-outlined {
+    background-color: transparent;
+    color: #22c55e; /* Green-500 (Primary color) */
+    border: 2px solid #22c55e;
+}
+
+.btn-outlined:hover {
+    background-color: rgba(34, 197, 94, 0.08);
+    border-color: #16a34a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outlined:active {
+    transform: scale(0.98);
+    background-color: rgba(34, 197, 94, 0.12);
+}
+
+.btn-outlined:focus {
+    outline: 2px solid rgba(34, 197, 94, 0.5);
+    outline-offset: 2px;
+}
+
+.btn-outlined:disabled {
+    color: rgba(34, 197, 94, 0.38);
+    border-color: rgba(34, 197, 94, 0.38);
+    cursor: not-allowed;
+}
+
+/* Filled Tonal Button (중강조) */
+.btn-tonal {
+    background-color: rgba(34, 197, 94, 0.15); /* Secondary color (light) */
+    color: #16a34a; /* Secondary color (dark) */
+}
+
+.btn-tonal:hover {
+    background-color: rgba(34, 197, 94, 0.25);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-tonal:active {
+    transform: scale(0.98);
+    background-color: rgba(34, 197, 94, 0.2);
+}
+
+.btn-tonal:focus {
+    outline: 2px solid rgba(34, 197, 94, 0.5);
+    outline-offset: 2px;
+}
+
+.btn-tonal:disabled {
+    background-color: rgba(34, 197, 94, 0.08);
+    color: rgba(34, 197, 94, 0.38);
+    cursor: not-allowed;
+}
+
+/* Text Button (최저강조 - 인라인 액션) */
+.btn-text {
+    background-color: transparent;
+    color: #22c55e; /* Green-500 (Primary color) */
+}
+
+.btn-text:hover {
+    background-color: rgba(34, 197, 94, 0.08);
+}
+
+.btn-text:active {
+    transform: scale(0.98);
+    background-color: rgba(34, 197, 94, 0.12);
+}
+
+.btn-text:focus {
+    outline: 2px solid rgba(34, 197, 94, 0.5);
+    outline-offset: 2px;
+}
+
+.btn-text:disabled {
+    color: rgba(34, 197, 94, 0.38);
+    cursor: not-allowed;
+}
+
+/* Elevated Button (선택적) */
+.btn-elevated {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #22c55e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-elevated:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-elevated:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-elevated:focus {
+    outline: 2px solid rgba(34, 197, 94, 0.5);
+    outline-offset: 2px;
+}
+
+.btn-elevated:disabled {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: rgba(34, 197, 94, 0.38);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Loading state */
+.btn:disabled {
+    opacity: 0.38;
+}
+
+.btn[aria-busy="true"]::after {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* Focus states for accessibility */
 button:focus,
 a:focus {
